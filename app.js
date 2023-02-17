@@ -21,14 +21,14 @@ var entradaDados = readline.createInterface({
 entradaDados.question('nome do aluno:\n', function (nomeAluno) {
     //pega o nome digitado
     let nome1 = nomeAluno;
-    entradaDados.question('qual sexo aluno?: [Femenino || Masculino] \n', function (sexoAl) {
+    entradaDados.question('qual sexo aluno?: [Feminino || Masculino] \n', function (sexoAl) {
         let sexoAluno = sexoAl;
         entradaDados.question('qual curso do aluno?: \n', function (cursoDoAluno) {
             let cursoAluno = cursoDoAluno
             //nome prof
             entradaDados.question('Nome do professor: \n', function (nomeProf) {
                 let nome2 = nomeProf;
-                entradaDados.question('qual sexo do professor?  [Femenino || Masculino] \n', function (sexoProf) {
+                entradaDados.question('qual sexo do professor?  [Feminino || Masculino] \n', function (sexoProf) {
                     let sexoProfessor = sexoProf;
                     entradaDados.question('qual a disciplina? \n', function (disciplina) {
                         let disciplinaProfessor = disciplina
@@ -55,16 +55,16 @@ entradaDados.question('nome do aluno:\n', function (nomeAluno) {
                                                 let resultado = calcularMedia.exame(mediaAluno, notaExame);
 
                                                 if (resultado <= 59) {
-                                                    console.log(`${sexoAluno} ${nomeAluno} foi REPROVADO na disciplina ${disciplina}`);
+                                                    console.log(`${calcularMedia.validarSexoAluno(sexoAluno)} ${nomeAluno} foi REPROVADO na disciplina ${disciplina}`);
                                                     console.log(`Curso: ${cursoAluno}`);
-                                                    console.log(`${sexoProf} : ${nomeProf}`);
+                                                    console.log(`${calcularMedia.validarSexoProfessor(sexoProfessor)} : ${nomeProf}`);
                                                     console.log(`Notas do Aluno: ${valor1}, ${valor2}, ${valor3}, ${valor4}, ${notaExame}`);
                                                     console.log(`Média Final: ${mediaAluno}`);
                                                     console.log(`Média do Exame: ${resultado}`);
                                                 } else if (resultado >= 60) {
-                                                    console.log(`${sexoAluno} ${nomeAluno} foi APROVADO na disciplina ${disciplina}`);
+                                                    console.log(`${calcularMedia.validarSexoAluno(sexoAluno)} ${nomeAluno} foi APROVADO na disciplina ${disciplina}`);
                                                     console.log(`Curso: ${cursoAluno}`);
-                                                    console.log(`${sexoProfessor} : ${nomeProf}`);
+                                                    console.log(`${calcularMedia.validarSexoProfessor(sexoProfessor)} : ${nomeProf}`);
                                                     console.log(`Notas do Aluno: ${valor1}, ${valor2}, ${valor3}, ${valor4}, ${notaExame}`);
                                                     console.log(`Média Final: ${mediaAluno}`);
                                                     console.log(`Média do Exame: ${resultado}`);
@@ -73,15 +73,15 @@ entradaDados.question('nome do aluno:\n', function (nomeAluno) {
 
                                         }
                                         else if (mediaAluno < 50) {
-                                            console.log(`${generoAl} ${nomeAluno} foi REPROVADO na disciplina ${disciplina}`);
+                                            console.log(`${calcularMedia.validarSexoAluno(sexoAluno)} ${nomeAluno} foi REPROVADO na disciplina ${disciplina}`);
                                             console.log(`Curso: ${cursoAluno}`);
-                                            console.log(`${generoProf} : ${nomeProf}`);
+                                            console.log(`${calcularMedia.validarSexoProfessor(sexoProfessor)} : ${nomeProf}`);
                                             console.log(`Notas do Aluno: ${valor1}, ${valor2}, ${valor3}, ${valor4}`);
                                             console.log(`Média Final: ${mediaAluno}`);
                                         } else if (mediaAluno > 70) {
-                                            console.log(`${generoAl} ${nomeAluno} foi APROVADO na disciplina ${disciplina}`);
+                                            console.log(`${calcularMedia.validarSexoAluno(sexoAluno)} ${nomeAluno} foi APROVADO na disciplina ${disciplina}`);
                                             console.log(`Curso: ${cursoAluno}`);
-                                            console.log(`${generoProf} : ${nomeProf}`);
+                                            console.log(`${calcularMedia.validarSexoProfessor(sexoProfessor)} : ${nomeProf}`);
                                             console.log(`Notas do Aluno: ${valor1}, ${valor2}, ${valor3}, ${valor4}`);
                                             console.log(`Média Final: ${mediaAluno}`);
                                         } 

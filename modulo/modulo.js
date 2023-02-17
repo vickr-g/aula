@@ -27,7 +27,7 @@ const mediaAluno = function (nota1, nota2, nota3, nota4, media) {
             exame()
             return media
         } else if (media < 50) {
-           return media
+            return media
         }
 
 
@@ -49,36 +49,40 @@ const exame = function (mediaAluno, notaExame) {
 }
 
 
-const sexoAluno = function (sexoAl) {
-    let generoAl = sexoAl
-
-    switch (sexoAl) {
+const validarSexoAluno = function (sexoAl) {
+    let generoAluno = sexoAl.toUpperCase()
+    let genero
+    switch (generoAluno) {
 
         case 'MASCULINO':
-            generoAl = 'O aluno'
+            genero = 'O aluno'
             break
 
-        case 'FEMENINO':
-            generoAl = 'A aluna'
+        case 'FEMININO':
+            genero = 'A aluna'
             break
 
     }
+    console.log(genero);
+    return genero
 }
 
-const sexoProfessor = function (sexoProf) {
-    let generoProf = sexoProf
+const validarSexoProfessor = function (sexoProf) {
+    let generoProfessor = sexoProf.toUpperCase()
+    let genero
 
-    switch (sexoProf) {
+    switch (generoProfessor) {
 
         case 'MASCULINO':
-            generoProf = 'O Professor'
+            genero = 'O Professor'
             break
 
-        case 'FEMENINO':
-            generoProf = 'A Professora'
+        case 'FEMININO':
+            genero = 'A Professora'
             break
 
     }
+    return genero
 }
 
 
@@ -88,6 +92,6 @@ const sexoProfessor = function (sexoProf) {
 module.exports = {
     mediaAluno,
     exame,
-    sexoAluno,
-    sexoProfessor
+    validarSexoAluno,
+    validarSexoProfessor
 }
